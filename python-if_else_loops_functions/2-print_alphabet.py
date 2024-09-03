@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 import string
-for i in string.ascii_lowercase:
-    print(i, end="")
+str = string.ascii_lowercase
+for i in str:
+    print(f"{str}", end="")
+    break
