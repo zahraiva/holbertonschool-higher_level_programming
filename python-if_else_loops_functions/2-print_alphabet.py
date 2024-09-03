@@ -2,5 +2,5 @@
 import string
 str = string.ascii_lowercase
 for i in str:
-    print(f"{str}", end="")
+    print("{}".format(str), end="")
     break
