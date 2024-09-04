@@ -7,5 +7,5 @@ def reversed_alp():
             res += char
         else:
             res += char.upper()
-    print(res)
+    print(f'{res}', end='')
 reversed_alp()
