@@ -8,4 +8,6 @@ def reversed_alp():
         else:
             res += char.upper()
     print('{}'.format(res[::-1]), end='')
+
+
 reversed_alp()
