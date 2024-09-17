@@ -2,6 +2,6 @@
 """Define a class"""
 
 
-class Square():
+class Square:
     """an empty class"""
     pass
