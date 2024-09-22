@@ -15,6 +15,7 @@ class Rectangle:
             raise ValueError('height must be >= 0')
         self.__width = width
         self.__height = height
+        Rectangle.num_of_inst += 1
 
     @property
     def width(self):
@@ -57,5 +58,5 @@ class Rectangle:
         return "Rectangle({}, {})".format(self.width, self.height)
 
     def __del__(self):
-        Rectangle.number_of_instances -= 1
+        Rectangle.num_of_inst -= 1
         print("Bye rectangle...")
