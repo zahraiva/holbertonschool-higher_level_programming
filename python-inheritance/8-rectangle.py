@@ -2,6 +2,7 @@
 """Module containing BaseGeometry class"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """class rectangle with a parent basegeometry"""
     def __init__(self, width, height) -> None:
