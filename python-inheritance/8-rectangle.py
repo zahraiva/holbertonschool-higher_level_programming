@@ -2,7 +2,7 @@
 """an empty class"""
 
 
-class BaseGeometry():
+class Rectangle(BaseGeometry):
     """class basegeometry"""
     def area(self):
         """to raise an exception"""
@@ -16,7 +16,7 @@ class BaseGeometry():
             raise ValueError('{} must be greater than 0'.format(name))
 
     def __init__(self, width, height):
-        """init width and height of a rectagle"""
+        """init a rectagle object"""
         self.integer_validator('width', width)
         self.__width = width
         self.integer_validator('height', height)
