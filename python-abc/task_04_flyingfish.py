@@ -21,7 +21,8 @@ class FlyingFish(Fish, Bird):
     def swim(self):
         print('The flying fish is swimming!')
 
-    def habitat("The flying fish lives both in water and the sky!")
+    def habitat(self):
+        print("The flying fish lives both in water and the sky!")
 
 ucanbaliq = FlyingFish()
 
