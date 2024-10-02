@@ -11,13 +11,13 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-     def to_json(self, attrs=None):
-        """retrieving dict of our class"""
-        if isinstance(attrs, list) and \
-                all(isinstance(element, str) for element in attrs):
-            new_dict = dict()
-            for i in attrs:
-                if i in self.__dict__:
-                    new_dict[i] = self.__dict__[i]
-            return new_dict
-        return self.__dict__
+    def to_json(self, attrs=None):
+            """retrieving dict elements of student class"""
+            if isinstance(attrs, list) and \
+                    all(isinstance(element, str) for element in attrs):
+                new_dict = dict()
+                for i in attrs:
+                    if i in self.__dict__:
+                        new_dict[i] = self.__dict__[i]
+                return new_dict
+            return self.__dict__
