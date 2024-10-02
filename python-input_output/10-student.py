@@ -12,6 +12,7 @@ class Student:
         self.age = age
 
      def to_json(self, attrs=None):
+        """retrieving dict of our class"""
         if isinstance(attrs, list) and \
                 all(isinstance(element, str) for element in attrs):
             new_dict = dict()
