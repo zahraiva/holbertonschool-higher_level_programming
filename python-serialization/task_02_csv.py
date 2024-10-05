@@ -15,5 +15,5 @@ def convert_csv_to_json(file_csv):
 
         return True
     except (FileNotFoundError, IOError) as e:
-        print(f'error:' {e})
+        print(f'error: {e}')
         return False
