@@ -29,10 +29,10 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
 
         else:
             self.send_response(404)
-            self.send_header("Content-type", "application/json")  # Change to JSON content type
+            self.send_header("Content-type", "application/json")
             self.end_headers()
-            error_message = {"error": "Endpoint not found"}  # JSON error message
-            self.wfile.write(json.dumps(error_message).encode())  # Encode and write the error message
+            error_message = {"error": "Endpoint not found"}  # Ensure correct message format
+            self.wfile.write(json.dumps(error_message).encode())
 
 with socketserver.TCPServer(("", 8000), MyHandler) as httpd:
     print("Serving at port 8000")
