@@ -2,7 +2,7 @@ import requests
 import csv
 
 def fetch_and_print_posts():
-    r = requests('https://jsonplaceholder.typicode.com/posts')
+    r = requests.get('https://jsonplaceholder.typicode.com/posts')
     print("Status code: {}".format(r.status_code))
     if r.status_code == 200:
         posts = r.json()
