@@ -15,8 +15,8 @@ def home():
 @app.route('/data')
 def data():
     if not users:
-        return jsonify({"message": "No users found"}), 200
-    return jsonify(list(users.keys()))
+        return jsonify([]), 200
+    return jsonify(list(users.keys())), 200
 
 @app.route('/status')
 def status():
@@ -32,7 +32,7 @@ def get_user(username):
 @app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
-    if 'username' not in data or 'name' not in data or 'age' not in data or 'city' not in data:
+    if not data or not all(key in data for key in ['username', 'name', 'age', 'city']):
         return jsonify({"error": "All fields (username, name, age, city) are required"}), 400
     if data['username'] in users:
         return jsonify({"error": "Username already exists"}), 400
@@ -42,7 +42,7 @@ def add_user():
         "age": data['age'],
         "city": data['city']
     }
-    return jsonify({"message": "User added", "user": users[data['username']]})
+    return jsonify({"message": "User added", "user": users[data['username']]}), 201
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
