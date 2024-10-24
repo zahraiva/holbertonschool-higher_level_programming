@@ -1,2 +1,2 @@
--- listing same nums
-SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY score DESC;
+-- listing recs
+SELECT score, COUNT(name) as number FROM second_table GROUP BY score ORDER BY number DESC;
