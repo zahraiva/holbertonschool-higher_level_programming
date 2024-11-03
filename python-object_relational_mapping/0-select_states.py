@@ -1,31 +1,27 @@
 #!/usr/bin/python3
 """
-Module for Selecting states from the hbtn_0e_0_usa database
-"""
+Module for Selecting states from the hbtn_0e_0_usa database"""
 
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
 
     db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3]
-    )
-    cursor = db.cursor()
-
+            host="localhost",
+            port=3306,
+            user=argv[1],
+            passwd=argv[2],
+            db=argv[3]
+            )
+    cur = db.cursor()
     try:
-        cursor.execute("SELECT * FROM states ORDER BY id ASC")
-        rows = cursor.fetchall()
-
-        for row in rows:
-            print(row)
-    
+        cur.execute("""SELECT * FROM states ORDER BY id""")
+        rows = cur.fetchall()
     except MySQLdb.Error as e:
-        print("Error:", e)
+        print(e)
 
-    finally:
-        cursor.close()
-        db.close()
+    for row in rows:
+        print(row)
+
+    cur.close()
+    db.close()
