@@ -24,10 +24,8 @@ if __name__ == "__main__":
             print(row)
     
     except MySQLdb.Error as e:
-        print(e)
+        print("Error:", e)
 
     finally:
-        if cursor:
-            cursor.close()
-        if db:
-            db.close()
+        cursor.close()
+        db.close()
