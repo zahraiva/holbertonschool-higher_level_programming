@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Module for Selecting states from the hbtn_0e_0_usa database"""
+Module for Selecting states from the hbtn_0e_0_usa database
+"""
 
 if __name__ == "__main__":
     import MySQLdb
